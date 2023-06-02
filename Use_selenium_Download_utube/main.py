@@ -23,9 +23,10 @@ list = driver.find_elements(By.ID,"video-title")
 for vid in list:
     #從網址尋找href屬性，並回傳
     url = vid.get_attribute("href")
+    #如果沒有網址，就跳過
     if vid.text =="":
         continue
-    print(url)
+
     #不分類下載，會載到低畫質得
     #pytube.YouTube(url).streams.first().download()
 
